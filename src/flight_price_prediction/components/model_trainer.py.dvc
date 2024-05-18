@@ -1,0 +1,5 @@
+outs:
+- md5: c85512e447dd50377358da24163b3043
+  size: 4058
+  hash: md5
+  path: model_trainer.py

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Price Prediction Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .images-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .images-container img {
+            max-width: 100px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Flight Price Prediction</h1>
+
+
+        <form action="{{ url_for('predict_datapoint') }}" method="POST">
+            <div class="form-group">
+                <label for="Airline">Airline:</label>
+                <select id="Airline" name="Airline">
+                    <option value="JetAirways">JetAirways</option>
+                    <option value="Indigo">Indigo</option>
+                    <option value="AirIndia">AirIndia</option>
+                    <option value="MultipleCarriers">MultipleCarriers</option>
+                    <option value="SpiceJet">SpiceJet</option>
+                    <option value="Vistara">Vistara</option>
+                    <option value="AirAsia">AirAsia</option>
+                    <option value="GoAir">GoAir</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Date_of_Journey">Date of Journey:</label>
+                <input type="text" id="Date_of_Journey" name="Date_of_Journey" placeholder="Enter Date of Journey (e.g., 2022-12-31)">
+            </div>
+
+            <div class="form-group">
+                <label for="Source">Source:</label>
+                <select id="Source" name="Source">
+                    <option value="Banglore">Banglore</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Chennai">Chennai</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Destination">Destination:</label>
+                <select id="Destination" name="Destination">
+                    <option value="Banglore">Banglore</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Cochin">Cochin</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Dep_Time">Dep_Time:</label>
+                <input type="text" id="Dep_Time" name="Dep_Time" placeholder="Enter Departure Time (e.g., 10:00)">
+            </div>
+
+            <div class="form-group">
+                <label for="Arrival_Time">Arrival_Time:</label>
+                <input type="text" id="Arrival_Time" name="Arrival_Time" placeholder="Enter Arrival Time (e.g., 12:00)">
+            </div>
+
+            <div class="form-group">
+                <label for="Total_Stops">Total Stops:</label>
+                <select id="Total_Stops" name="Total_Stops">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Duration_In_Minutes">Duration In Minutes:</label>
+                <input type="text" id="Duration_In_Minutes" name="Duration_In_Minutes" placeholder="Enter total duration in minutes">
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        function setCurrentTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const formattedTime = `${hours}:${minutes}`;
+
+            document.getElementById('Dep_Time').value = formattedTime;
+            document.getElementById('Arrival_Time').value = formattedTime;
+        }
+
+        window.onload = setCurrentTime;
+    </script>
+</body>
+</html>
