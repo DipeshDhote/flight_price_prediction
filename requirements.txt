@@ -7,7 +7,6 @@ ipykernel
 feature_engine
 xgboost==2.0.2
 flask
-gunicorn
 
 
 #-e .
