@@ -2,7 +2,7 @@
 ## Project Overview
 The Flight Price Prediction project aims to predict the price of flight tickets based on various factors such as airline, source, destination, departure time, arrival time, duration, and number of stops. The project leverages machine learning techniques to provide accurate price predictions, helping users to make informed decisions when booking flights.
 
-###Table of Contents
+### Table of Contents
 - Introduction
 - Features
 - Data
