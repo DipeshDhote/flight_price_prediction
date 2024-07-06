@@ -29,7 +29,6 @@ The dataset used in this project includes the following features:
 - Date of Journey
 - Source
 - Destination
-- Route
 - Departure Time
 - Arrival Time
 - Duration
