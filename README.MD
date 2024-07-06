@@ -35,3 +35,19 @@ The dataset used in this project includes the following features:
 - Total Stops
 - Additional Information
 The dataset is preprocessed to handle missing values, convert categorical data into numerical values, and normalize the data for better model performance.
+
+### Model Training
+The project utilizes several machine learning algorithms, including:
+
+- Linear Regression
+- Decision Tree
+- Random Forest
+- K-Neighbors Regressor
+The models are trained on preprocessed data, and their performances are evaluated using metrics like Mean Absolute Error (MAE), Mean Squared Error (MSE), and R-squared.
+
+### Results
+The results of the model training and evaluation are provided in the results folder. The best-performing model is saved and used in the web application for predictions. Data visualizations are also available to help understand the factors affecting flight prices.
+
+### License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
